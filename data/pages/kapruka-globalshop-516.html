@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="/styles/default.css">
+<link rel="stylesheet" type="text/css" href="/globalshop/css/ddmegamenu.css" />
+<link rel="stylesheet" type="text/css" href="/globalshop/css/GS_style.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/jquery-bubble-popup-v3/css/jquery-bubble-popup-v3.css" />
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<title>Kapruka - Global Shop : My Account</title>
+<meta name="description" content="My Accout page of Kapruka global shop offers over 50 million items to order from Amazon, Ebay etc into Sri Lanka">
+<meta name="keywords" content="Ebay,Amazon,Kapruka,Online,pricehceck">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="copyright" content="Copyright 2001-2018 Kapruka.com pvt ltd, Sri Lanka. All Rights Reserved.">
+<meta name="author" content="Kapruka Sri Lanka">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="/globalshop/scripts/ddmegamenu.js"></script>
+<script src="/scripts/jquery-bubble-popup-v3/scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="/scripts/jquery-bubble-popup-v3/scripts/jquery-bubble-popup-v3.min.js" type="text/javascript"></script>
+<script language="javascript" src="/globalshop/scripts/globalshop.js"></script>
+<script>
+ddmegamenu.docinit({
+	menuid:'solidmenu',
+	dur:200 //<--no comma after last setting
+})
+ddmegamenu.docinit({
+	menuid:'megaanchorlink',
+	dur:500,
+	easing:'easeInOutCirc' //<--no comma after last setting
+})
+
+</script>
+</head>
+
+
+<script language="javascript">
+
+function checkForm()
+{
+errorMessage = "";
+if (document.form1.email.value.length < 2) errorMessage += "* Order No is required. \n\n";
+if (document.form1.phone.value.length < 2) errorMessage += "* Your phone number is required. \n\n";
+if ( errorMessage.length > 0 )  
+{
+ alert( errorMessage );
+ return false;
+}
+document.form1.button1.value = "Please wait..";
+return true;
+}
+</script>
+<body onload="document.form1.realbrowser.value='yes';if(document.form1.email!=null) document.form1.email.focus();if ((document.form1.email!=null) && (document.form1.email.value.length>2)) document.form1.password.focus();">
+<div class="GS_Wrapper">
+<div class="GS_Header">
+<div class="GS_Logo lfloat"><a href='https://www.kapruka.com'><img src="images/KaprukaGS_logo.gif" alt="Global Shop" border=0/></a></div>
+<div class="GS_PriceCheck rfloat">
+<br>
+<a href='https://www.kapruka.com/globalshop/price_check.jsp'><img class="pricechecklogo" src="images/KaprukaGS_PriceChecker.gif" alt="Price Checker" border="0" /></a></div>
+</div>
+<div class="GS_clear"></div>
+<div class="GS_Navigation">
+<ul class="topnavi">
+<li><a href="https://www.kapruka.com/globalshop/products.jsp" class='topnavi_selected'>Todays Best Sellers</a></li>
+<li><a href="https://www.kapruka.com/globalshop/price_check.jsp">Price Checker</a><img style='margin-right:1px;margin-top:4px;' src='/globalshop/images/p_icon.png' align=absmiddle></li>
+<li><img src="images/topnavi_sep.gif" /></li>
+
+<li><a href="https://www.kapruka.com/globalshop/faq.jsp">FAQ</a></li>
+<li><img src="images/topnavi_sep.gif"></li>
+<li><a href="https://www.kapruka.com/globalshop/order_status.jsp">Order Status</a></li>
+
+<li><img src="images/topnavi_sep.gif" /></li>
+<li><a href="https://www.kapruka.com/globalshop/press_articles.jsp">Kapruka Global Shop Concept</a></li>
+<li><img src="images/topnavi_sep.gif" /></li>
+<li><a href="https://www.kapruka.com/globalshop/my_account.jsp">My Account</a></li>
+<li><img src="images/topnavi_sep.gif" /></li>
+</ul>
+
+
+
+</div>
+<div class="GS_clear"></div>
+<div class="clear"></div>
+<div class="GS_PC_Background">
+<div class="clear"></div>
+<div class="GS_Form lfloat">
+<div class="GS_PC_FormHeader"><img src="images/GS_PC_FormHeader.jpg" alt="" /> </div>
+<div class="clear"></div>
+<div class="GS_PC_FormBackground">
+<div class="GS_PC_Form">
+<form onSubmit="return checkForm();" name="form1" method="post" action="https://www.kapruka.com/globalshop/my_account.jsp">
+<INPUT TYPE="HIDDEN" VALUE="no" NAME="realbrowser" />
+<ul>
+<li><span>Email Address</span><input type="text" name="email" value="" /></li>
+<li><div class="GS_PC_Line"></div></li>
+<li><span>Password</span><input type="password" name="password" value="" /></li>
+<li><div class="GS_PC_Line"></div></li>
+<li>
+<br>
+<input style="width:90px;" name="button1" class="gs_button" type="submit" name="submit" value="Login" />
+<br><br>
+<div style="font-size:12px;">
+<a class=gray href='https://www.kapruka.com/shops/customerAccounts/accountNew.jsp?origination=globalshop'>Create A New Account</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a class=gray href='https://www.kapruka.com/shops/customerAccounts/accountPasswordrecovery.jsp'>Forgot Password?</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a class=gray target='_new' href='https://www.kapruka.com/globalshop/terms_and_conditions.jsp'>Terms and Conditions</a>
+</div>
+<div id='wait_msg' class=tinyr style='margin-top:5px;'></div>
+</li>
+</ul>
+<br></br>
+</form>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="GS_Options">
+<p class="GS_PC_Welcome">By signing up for an account at Kapruka you can:</p>
+<br><br>
+<ul>
+<li><img src="images/GS_PC_IcoRight.jpg" alt="tick" /><p><span>Detailed Order Status</span> <br />
+View your past orders and price checks all in one place</p>
+</li>
+<li><img src="images/GS_PC_IcoRight.jpg" alt="tick" /><p><span>Updated Frequently</span> <br />
+We update this status hourly with the latest information we have on your order from the shipper (Amazon, ebay, etc), from our warehouses in US and UK.
+</p>
+</li>
+<li><img src="images/GS_PC_IcoRight.jpg" alt="tick" /><p><span>Price Checks</span> <br />
+A quick access to your previous price checks so your dont have to go through your emails anymore to find them.
+</p>
+</li>
+</ul>
+</div>
+<br /><div class="GS_General" style="margin-left:10px;">
+<br>
+<h1></h1>
+</div>
+<br>
+</div>
+<div class="clear"></div>
+<div align=center>
+<div align=left style="width:100%;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#919191">
+<div class="contactInfo">Kapruka - Sri Lanka's Largest Online Shop&nbsp;&nbsp;|&nbsp;&nbsp;Office Locations:</div>
+<div class="officeAddress" style="width:660px;">
+<ul>
+<li>
+<p style="margin-right:0;"><span>Kapruka Global Shop</span><br><a href='https://maps.google.com/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=469665602458230010&q=Kapruka.com+Global+Shop&iwloc=A&gl=US&hl=en' targer="_new"><img src='/contactUs/images/place.png' alt='Kapruka Colombo Office Location Map' align='absmiddle' border=0></a> 302 Galle Road, Colombo 4, Sri Lanka.(Customer Care Center) +94-11-7551111 - colombo.office&#064kapruka.com</p>
+</li>
+<li>
+<p> <span style="font-size:11px;">USA: </span><br />
+4461 Wellington Gardens Drive, <br />
+Lexington, KY40513, <br />
+USA (Phone/Fax: +1-859-215-0159)<br />
+lexingtonky.office&#064;kapruka.com </p>
+</li>
+<li>
+<p><span style="font-size:11px;">United Kingdom:</span> <br />
+145-157 St John Street, London <br />
+EC1V 4PY, <br />
+UK (Phone/Fax: +44-207-078-4149)<br />
+london.office&#064;kapruka.com</p>
+</li>
+<li>
+<p style="margin-right:0;float:right" style="font-size:11px;"><span style="font-size:11px;">Australia: </span><br />
+1362 Ports Hill Road, <br />
+Blackwood SA 5051, <br />
+Australia (Phone/Fax: +61-870-708-164) <br />
+adelaide.office&#064;kapruka.com<br />
+</li>
+<li>
+<div class="clear"></div>
+</li>
+<li>
+<hr class="dotline" />
+</li>
+<li>
+<p style="margin-right:0;"><span>Central Office - Sri Lanka:</span><br>302 Galle Road, Colombo 4, Sri Lanka.(Customer Care Center) +94-11-7551111 - colombo.office&#064kapruka.com &nbsp;&nbsp;|&nbsp;&nbsp; <a href='https://www.kapruka.com/contactUs/officeLocations.jsp' class=gray>More</a></p>
+</li>
+<li>
+<div class="clear"></div>
+</li>
+<li>
+<hr class="dotline" />
+</li>
+<li>
+<p class="marginTop"><span>Join with Kapruka :</span> </p>
+<a href='https://www.facebook.com/kaprukafans'><img src="/images/ico_fb.jpg" hspace="5" width="25" height="25" border="0" /></a>
+<a href='https://twitter.com/kapruka'><img src="/images/ico_twitter.jpg" width="25" hspace="5" height="25" border="0" /></a>
+<a href='https://www.linkedin.com/company/kapruka-com'><img src="/images/ico_linkin.jpg" hspace="5" width="25" height="25" border="0" /></a>
+<a href='https://www.google.com/+kapruka'><img src="/images/ico_google.jpg" hspace="5" width="25" height="25" border="0" /></a>
+<br>
+<p class="plink"><a href="https://www.facebook.com/kaprukafans">Over 768,000+ Sri Lankan Fans.</a><br />
+USA/Canada: 1-800-651-5099 (Customer Feedback)
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href='https://www.kapruka.com/contactUs/about_us.jsp' class=gray style='text-transform:none;'>Read About Kapruka</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href='https://www.kapruka.com/contactUs/kapruka_reviews.jsp' class=gray style='text-transform:none;'>Reviews</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+</p>
+</li>
+<li>
+<div class="clear"></div>
+</li>
+<li>
+<hr class="dotline" />
+</li>
+<li>
+<p class="marginTop"><span>Payment Methods :</span> </p>
+<img src="/images/pay_certification.jpg" width="397" height="28" /> </li>
+<li>
+<div class="clear"></div>
+</li>
+<li>
+<hr class="dotline">
+</li>
+<li>
+<div class="clear"></div>
+</li>
+<li>
+<p class="copyright">© 2000-2015 <a href='https://www.kapruka.com' class=gray>Kapruka - www.kapruka.com</a> - Bringing <a class=gray href='https://en.wikipedia.org/wiki/Sri_Lanka'>Sri Lanka</a> one step closer to you&#153;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div style='width:650px;' class='tiny' align=right><font color=gray>Current Page For : Global Shopping in <a href='http://www.lankalibrary.com' class=gray>Sri Lanka</a></font>&nbsp;&nbsp;</div>
+</div>
+</body>
+</html>
