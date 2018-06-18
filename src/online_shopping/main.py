@@ -33,8 +33,8 @@ def extract_data():
 
 
 if __name__ == "__main__":
-    # write_initial_file()
-    # crawl_link_extractor()
-    # remove_duplicate_links()
-    # crawl_pages()
+    write_initial_file()
+    crawl_link_extractor()
+    remove_duplicate_links()
+    crawl_pages()
     extract_data()

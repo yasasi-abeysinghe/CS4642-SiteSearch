@@ -22,4 +22,5 @@ class KaprukaComExtractorSpider(scrapy.Spider):
             text = selector.xpath("text()").extract_first()
             # Return it thanks to a generator
             data = json.loads(text)
-            yield data
+            if data["@type"] == "product":
+                yield data
