@@ -25,11 +25,11 @@ def remove_duplicate_links():
 
 
 def crawl_pages():
-    os.system("python scrapy_command_executor.py crawl kaprukacom")
+    os.system("python scrapy_command_executor.py crawl kaprukacom -o ../../data/items_details_2.json")
 
 
 def extract_data():
-    os.system("python scrapy_command_executor.py crawl kaprukacomextractor -o ../../data/items_details.json")
+    os.system("python scrapy_command_executor.py crawl kaprukacomextractor -o ../../data/items_details_1.json")
 
 
 if __name__ == "__main__":
