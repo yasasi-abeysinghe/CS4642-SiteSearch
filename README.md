@@ -1,6 +1,6 @@
 # CS4642-SiteSearch
 
-This CS4642-SiteSearch project is used to retrieve information on the products from local vendors which are available at https://www.kapruka.com/ site and build a search inded for this site.
+This CS4642-SiteSearch project is used to retrieve information on the products from local vendors which are available at https://www.kapruka.com/ site and build a search index for this site.
 
 ## Getting Started
 
