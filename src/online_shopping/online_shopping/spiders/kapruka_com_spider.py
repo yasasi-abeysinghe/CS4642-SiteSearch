@@ -34,9 +34,9 @@ class KaprukaComSpider(scrapy.Spider):
                            '//div[@class="info-wrap"]/p[2]/text()').extract_first() is not None) and (response.xpath(
                            '//div[@class="info-wrap"]/p[2]/text()').extract_first() is not ' ') else response.xpath(
                            '//div[@class="info-wrap"]/p[2]/a[@class="ex3"]/text()').extract_first())
-        item.add_value(field_name='instock',
-                       value=True if response.xpath(
-                           '//div[@class="product-information"]/div[2]/text()[4]').extract_first() == " In Stock\n" else False)
+        item.add_value(field_name='availability',
+                       value="in stock" if response.xpath(
+                           '//div[@class="product-information"]/div[2]/text()[4]').extract_first() == " In Stock\n" else "out of stock")
         item.add_value(field_name='delivery_areas_src',
                        value=response.xpath('//div[@class="product-information"]/script/text()').extract_first().split(
                            "src=")[-1].split(" ")[0] if response.xpath(

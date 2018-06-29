@@ -13,7 +13,7 @@ class OnlineShoppingItem(scrapy.Item):
     # define the fields for your item here like:
     name = scrapy.Field(output_processor=TakeFirst())
     vendor = scrapy.Field(output_processor=TakeFirst())
-    instock = scrapy.Field(output_processor=TakeFirst())
+    availability = scrapy.Field(output_processor=TakeFirst())
     payment_method = scrapy.Field(output_processor=TakeFirst())
     delivery_areas_src = scrapy.Field(output_processor=TakeFirst())
     delivery_areas = scrapy.Field()
