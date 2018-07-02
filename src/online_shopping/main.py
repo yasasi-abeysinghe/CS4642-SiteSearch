@@ -1,4 +1,5 @@
 import os
+import json
 
 
 def write_initial_file():
@@ -7,7 +8,7 @@ def write_initial_file():
 
 
 def crawl_link_extractor():
-    # execute 6 times to extract all the links in the botanicgardens.gov.lk
+    # execute 2 times to extract all the links in the kapruka.com
     for i in range(2):
         os.system("python scrapy_command_executor.py crawl kaprukacomlinks")
 
@@ -25,16 +26,47 @@ def remove_duplicate_links():
 
 
 def crawl_pages():
-    os.system("python scrapy_command_executor.py crawl kaprukacom -o ../../data/items_details_2.json")
+    os.system("python scrapy_command_executor.py crawl kaprukacom -o ../../data/items_details_1.json")
 
 
 def extract_data():
-    os.system("python scrapy_command_executor.py crawl kaprukacomextractor -o ../../data/items_details_1.json")
+    os.system("python scrapy_command_executor.py crawl kaprukacomextractor -o ../../data/items_details_2.json")
+
+
+def merge_files():
+    data = []
+    with open('../../data/items_details_1.json') as json_file_1:
+        data_1 = json.load(json_file_1)
+    with open('../../data/items_details_2.json') as json_file_2:
+        data_2 = json.load(json_file_2)
+
+    for i in data_1:
+        for j in data_2:
+            if "name" in i and "name" in j:
+                if i["name"] == j["name"]:
+                    data.append(
+                        {
+                            "name": i["name"],
+                            "payment_method": i["payment_method"] if "payment_method" in i else None,
+                            "vendor": i["vendor"] if "vendor" in i else None,
+                            "availability": i["availability"] if "availability" in i else None,
+                            "delivery_areas_src": i["delivery_areas_src"] if "delivery_areas_src" in i else None,
+                            "similar_items": i["similar_items"] if "similar_items" in i else None,
+                            "max_qty": i["max_qty"] if "max_qty" in i else None,
+                            "category": j["category"],
+                            "price": j["offers"]["price"],
+                            "brand": j["brand"]
+                        }
+                    )
+
+    with open('../../data/items_details.json', 'w') as outfile:
+        json.dump(data, outfile)
 
 
 if __name__ == "__main__":
-    write_initial_file()
-    crawl_link_extractor()
-    remove_duplicate_links()
-    crawl_pages()
-    extract_data()
+    # write_initial_file()
+    # crawl_link_extractor()
+    # remove_duplicate_links()
+    # crawl_pages()
+    # extract_data()
+    merge_files()
