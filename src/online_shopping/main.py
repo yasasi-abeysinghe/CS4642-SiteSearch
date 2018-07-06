@@ -1,6 +1,8 @@
 import os
 import json
 
+data_1 = []
+
 
 def write_initial_file():
     file = open('../../links/links.txt', 'w')
@@ -33,10 +35,19 @@ def extract_data():
     os.system("python scrapy_command_executor.py crawl kaprukacomextractor -o ../../data/items_details_2.json")
 
 
+def remove_NA_values():
+    global data_1
+    with open('../../data/items_details_1.json') as json_file:
+        data_1 = json.load(json_file)
+    for i in data_1:
+        for key in i.keys():
+            if i[key] == "N/A":
+                i[key] = None
+
+
 def merge_files():
+    global data_1
     data = []
-    with open('../../data/items_details_1.json') as json_file_1:
-        data_1 = json.load(json_file_1)
     with open('../../data/items_details_2.json') as json_file_2:
         data_2 = json.load(json_file_2)
 
@@ -69,4 +80,5 @@ if __name__ == "__main__":
     # remove_duplicate_links()
     # crawl_pages()
     # extract_data()
+    remove_NA_values()
     merge_files()
